@@ -116,7 +116,9 @@ class QConfigEntryPoint {
         String[][] addresses;
         try {
             addresses = future.get();
-            if (addresses == null) return;
+            if (addresses == null) {
+                return;
+            }
         } catch (Exception e) {
             logger.info("从entrypointv2接口获取http链接失败！", e);
             return;
